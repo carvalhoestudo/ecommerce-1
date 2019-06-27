@@ -1,19 +1,19 @@
 {
-	"name":"carvalhoestudo/ecommerce",
-	"authors":[
-		{
-			"name": "carvalhoestudo",
-			"email": "carvalho.madureira@hotmail.com"
-		}
-	],
-	"require":{
-		"phpmailer/phpmailer":"5.2.22",
-		"slim/slim":"2.0",
-		"rain/raintpl":"3.0.0"
-	},
-	"autoload":{
-		"psr-4":{
-			"":"vendor\\carvalhoestudo\\php-class\\src"
-		}
-	}
+    "name": "carvalhoestudo/ecommerce",
+    "authors": [
+        {
+            "name": "Aluno Carvalho",
+            "email": "carvalho.madureira@hotmail.com"
+        }
+    ],
+    "require": {
+    	"phpmailer/phpmailer":"5.2.22",
+    	"slim/slim":"2.0",
+    	"rain/raintpl":"3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "vendor\\carvalhoestudo\\php-classes\\src"
+        }
+    }
 }

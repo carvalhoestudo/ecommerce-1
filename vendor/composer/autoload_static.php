@@ -4,10 +4,10 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7069fbba5341819c3a594d04d7ad052a
+class ComposerStaticInit5007118b1c53877fb9858c965cb571b8
 {
     public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/carvalhoestudo/php-class/src',
+        0 => __DIR__ . '/..' . '/carvalhoestudo/php-classes/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -41,9 +41,9 @@ class ComposerStaticInit7069fbba5341819c3a594d04d7ad052a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInit7069fbba5341819c3a594d04d7ad052a::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7069fbba5341819c3a594d04d7ad052a::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7069fbba5341819c3a594d04d7ad052a::$classMap;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit5007118b1c53877fb9858c965cb571b8::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit5007118b1c53877fb9858c965cb571b8::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit5007118b1c53877fb9858c965cb571b8::$classMap;
 
         }, null, ClassLoader::class);
     }
