@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Hcode;
 
@@ -14,31 +14,37 @@ class Model {
 
 		switch ($method) 
 		{
+
 			case 'get':
-				$this->values[$fieldName];
+				return $this->values[$fieldName];
 			break;
 			
-			case 'set':
+			case "set":
 				$this->values[$fieldName] = $args[0];
 			break;
+
 		}
 
 	}
 
 	public function setData($data = array())
 	{
+
 		foreach ($data as $key => $value) {
 			
 			$this->{"set".$key}($value);
 
 		}
+
 	}
 
 	public function getValues()
 	{
 
 		return $this->values;
-		
+
 	}
 
 }
+
+ ?>
