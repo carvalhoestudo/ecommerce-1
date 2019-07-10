@@ -4,8 +4,8 @@ namespace Hcode;
 use Rain\Tpl;
 class Mailer {
 	
-	const USERNAME = "carenasml@gmail.com";
-	const PASSWORD = "<senha>";
+	const USERNAME = "seuemail@email.com";
+	const PASSWORD = "<suasenha>";
 	const NAME_FROM = "Loja Ecommerce";
 	private $mail;
 	public function __construct($toAddress, $toName, $subject, $tplName, $data = array())
@@ -27,7 +27,7 @@ class Mailer {
 		    //Configurações do servidor
 
 		    $this->mail->setLanguage('pt_br');                   //Define a Linguagem Padrão do e-mail
-		    $this->mail->SMTPDebug = 2;                          // Ativar saída de depuração detalhada
+		    $this->mail->SMTPDebug = 0;                          // Ativar saída de depuração detalhada
 		    $this->mail->isSMTP();                               // Definir mailer para usar o SMTP
 		    $this->mail->Host       = 'smtp.gmail.com';          // Especifique servidores SMTP principais e de backup
 		    $this->mail->SMTPAuth   = true;                      // Ativar autenticação SMTP
@@ -35,15 +35,13 @@ class Mailer {
 		    $this->mail->Password   = Mailer::PASSWORD;          // Senha SMTP
 		    $this->mail->SMTPSecure = 'tls';                     // Ativar criptografia TLS, `ssl` também aceita
 		    $this->mail->Port       = 587;                       // Porta TCP para conectar
-			$this->mail->SMTPOptions = array(
-		    'ssl' => [
-		        'verify_peer' => true,
-		        'verify_depth' => 3,
-		        'allow_self_signed' => true,
-		        'peer_name' => $this->mail->Host, 				//Mesmo endereço do HOST
-		        'cafile' => '/etc/ssl/ca_cert.pem',
-		    ],
-		);
+		    		$this->mail->SMTPOptions = array(
+
+			'ssl' => array(
+			    'verify_peer' => false,
+			    'verify_peer_name' => false,
+			    'allow_self_signed' => true
+			));
 
 		    //Remetente
 		    $this->mail->setFrom(Mailer::USERNAME, Mailer::NAME_FROM);
@@ -75,7 +73,7 @@ class Mailer {
 
 	public function send()
 	{
-		//return $this->mail->send();
+		return $this->mail->send();
 	}
 
 	
